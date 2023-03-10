@@ -38,30 +38,25 @@ void PrintMatrix(int[,] matrix)  // выводит матрицу на конс�
 
 }
 
-float[,] averageMatrix(int [,] matrix)
-{
-    int count = 0;
-    int q = 0;
-         for(int j = 0; j < matrix.GetLength(1); j++ )
-    {
-        float av = count / q;
-        for(int i = 0; i < matrix.GetLength(0); i++)
-        {
-            count += matrix[i,j];
-            q += 1;
-
-        }
-
-    }
-       
-        
-           
-       return av; 
-}
 
 
 int m = ReadNumber("Введите кол-во строк");
 int n = ReadNumber("Введите кол-во столбцов");
 int[,] myMatrix = GetRandomMatrix(m, n);
 PrintMatrix(myMatrix);
-Console.WriteLine(averageMatrix);
+
+for(int j = 0; j < n; j++)
+    {
+        double aver_sum = 0;
+        for(int i = 0; i < m; i++)
+        {
+            aver_sum += myMatrix[i, j];
+           
+        }
+        Console.Write($"Среднее арифметическое столбца под индексом: {j} = {aver_sum / m}");
+        Console.WriteLine();
+    }
+
+
+
+
