@@ -47,7 +47,7 @@ PrintMatrix(myMatrix);
 
 int x = ReadNumber("Введите индекс строки интересующего элемента");
 int y = ReadNumber("Введите индекс столбца интересующего элемента");
-if (x <= m && y <= n)
+if (x < m && y < n)
 {
     Console.WriteLine($"Значение элемента матрицы с индексами [{x}, {y}] = {myMatrix[x, y]}");
 }
